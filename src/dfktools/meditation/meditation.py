@@ -6,46 +6,2391 @@ CRYSTALVALE_CONTRACT_ADDRESS = '0xD507b6b299d9FC835a0Df92f718920D13fA49B47'
 SERENDALE2_CONTRACT_ADDRESS = '0xdbEE8C336B06f2d30a6d2bB3817a3Ae0E34f4900'
 
 ABI = """[
-    {"name": "AttunementCrystalAdded", "type": "event", "inputs": [{"name": "atunementItemAddress", "type": "address", "internalType": "address", "indexed": false}], "anonymous": false},
-    {"name": "Initialized", "type": "event", "inputs": [{"name": "version", "type": "uint8", "internalType": "uint8", "indexed": false}], "anonymous": false},
-    {"name": "LevelUp", "type": "event", "inputs": [{"name": "player", "type": "address", "internalType": "address", "indexed": true}, {"name": "heroId", "type": "uint256", "internalType": "uint256", "indexed": true}, {"name": "hero", "type": "tuple", "internalType": "struct IHeroTypes.Hero", "components": [{"name": "id", "type": "uint256", "internalType": "uint256"}, {"name": "summoningInfo", "type": "tuple", "internalType": "struct IHeroTypes.SummoningInfo", "components": [{"name": "summonedTime", "type": "uint256", "internalType": "uint256"}, {"name": "nextSummonTime", "type": "uint256", "internalType": "uint256"}, {"name": "summonerId", "type": "uint256", "internalType": "uint256"}, {"name": "assistantId", "type": "uint256", "internalType": "uint256"}, {"name": "summons", "type": "uint32", "internalType": "uint32"}, {"name": "maxSummons", "type": "uint32", "internalType": "uint32"}]}, {"name": "info", "type": "tuple", "internalType": "struct IHeroTypes.HeroInfo", "components": [{"name": "statGenes", "type": "uint256", "internalType": "uint256"}, {"name": "visualGenes", "type": "uint256", "internalType": "uint256"}, {"name": "rarity", "type": "uint8", "internalType": "enum IHeroTypes.Rarity"}, {"name": "shiny", "type": "bool", "internalType": "bool"}, {"name": "generation", "type": "uint16", "internalType": "uint16"}, {"name": "firstName", "type": "uint32", "internalType": "uint32"}, {"name": "lastName", "type": "uint32", "internalType": "uint32"}, {"name": "shinyStyle", "type": "uint8", "internalType": "uint8"}, {"name": "class", "type": "uint8", "internalType": "uint8"}, {"name": "subClass", "type": "uint8", "internalType": "uint8"}]}, {"name": "state", "type": "tuple", "internalType": "struct IHeroTypes.HeroState", "components": [{"name": "staminaFullAt", "type": "uint256", "internalType": "uint256"}, {"name": "hpFullAt", "type": "uint256", "internalType": "uint256"}, {"name": "mpFullAt", "type": "uint256", "internalType": "uint256"}, {"name": "level", "type": "uint16", "internalType": "uint16"}, {"name": "xp", "type": "uint64", "internalType": "uint64"}, {"name": "currentQuest", "type": "address", "internalType": "address"}, {"name": "sp", "type": "uint8", "internalType": "uint8"}, {"name": "status", "type": "uint8", "internalType": "enum IHeroTypes.HeroStatus"}]}, {"name": "stats", "type": "tuple", "internalType": "struct IHeroTypes.HeroStats", "components": [{"name": "strength", "type": "uint16", "internalType": "uint16"}, {"name": "intelligence", "type": "uint16", "internalType": "uint16"}, {"name": "wisdom", "type": "uint16", "internalType": "uint16"}, {"name": "luck", "type": "uint16", "internalType": "uint16"}, {"name": "agility", "type": "uint16", "internalType": "uint16"}, {"name": "vitality", "type": "uint16", "internalType": "uint16"}, {"name": "endurance", "type": "uint16", "internalType": "uint16"}, {"name": "dexterity", "type": "uint16", "internalType": "uint16"}, {"name": "hp", "type": "uint16", "internalType": "uint16"}, {"name": "mp", "type": "uint16", "internalType": "uint16"}, {"name": "stamina", "type": "uint16", "internalType": "uint16"}]}, {"name": "primaryStatGrowth", "type": "tuple", "internalType": "struct IHeroTypes.HeroStatGrowth", "components": [{"name": "strength", "type": "uint16", "internalType": "uint16"}, {"name": "intelligence", "type": "uint16", "internalType": "uint16"}, {"name": "wisdom", "type": "uint16", "internalType": "uint16"}, {"name": "luck", "type": "uint16", "internalType": "uint16"}, {"name": "agility", "type": "uint16", "internalType": "uint16"}, {"name": "vitality", "type": "uint16", "internalType": "uint16"}, {"name": "endurance", "type": "uint16", "internalType": "uint16"}, {"name": "dexterity", "type": "uint16", "internalType": "uint16"}, {"name": "hpSm", "type": "uint16", "internalType": "uint16"}, {"name": "hpRg", "type": "uint16", "internalType": "uint16"}, {"name": "hpLg", "type": "uint16", "internalType": "uint16"}, {"name": "mpSm", "type": "uint16", "internalType": "uint16"}, {"name": "mpRg", "type": "uint16", "internalType": "uint16"}, {"name": "mpLg", "type": "uint16", "internalType": "uint16"}]}, {"name": "secondaryStatGrowth", "type": "tuple", "internalType": "struct IHeroTypes.HeroStatGrowth", "components": [{"name": "strength", "type": "uint16", "internalType": "uint16"}, {"name": "intelligence", "type": "uint16", "internalType": "uint16"}, {"name": "wisdom", "type": "uint16", "internalType": "uint16"}, {"name": "luck", "type": "uint16", "internalType": "uint16"}, {"name": "agility", "type": "uint16", "internalType": "uint16"}, {"name": "vitality", "type": "uint16", "internalType": "uint16"}, {"name": "endurance", "type": "uint16", "internalType": "uint16"}, {"name": "dexterity", "type": "uint16", "internalType": "uint16"}, {"name": "hpSm", "type": "uint16", "internalType": "uint16"}, {"name": "hpRg", "type": "uint16", "internalType": "uint16"}, {"name": "hpLg", "type": "uint16", "internalType": "uint16"}, {"name": "mpSm", "type": "uint16", "internalType": "uint16"}, {"name": "mpRg", "type": "uint16", "internalType": "uint16"}, {"name": "mpLg", "type": "uint16", "internalType": "uint16"}]}, {"name": "professions", "type": "tuple", "internalType": "struct IHeroTypes.HeroProfessions", "components": [{"name": "mining", "type": "uint16", "internalType": "uint16"}, {"name": "gardening", "type": "uint16", "internalType": "uint16"}, {"name": "foraging", "type": "uint16", "internalType": "uint16"}, {"name": "fishing", "type": "uint16", "internalType": "uint16"}]}], "indexed": false}, {"name": "oldHero", "type": "tuple", "internalType": "struct IHeroTypes.Hero", "components": [{"name": "id", "type": "uint256", "internalType": "uint256"}, {"name": "summoningInfo", "type": "tuple", "internalType": "struct IHeroTypes.SummoningInfo", "components": [{"name": "summonedTime", "type": "uint256", "internalType": "uint256"}, {"name": "nextSummonTime", "type": "uint256", "internalType": "uint256"}, {"name": "summonerId", "type": "uint256", "internalType": "uint256"}, {"name": "assistantId", "type": "uint256", "internalType": "uint256"}, {"name": "summons", "type": "uint32", "internalType": "uint32"}, {"name": "maxSummons", "type": "uint32", "internalType": "uint32"}]}, {"name": "info", "type": "tuple", "internalType": "struct IHeroTypes.HeroInfo", "components": [{"name": "statGenes", "type": "uint256", "internalType": "uint256"}, {"name": "visualGenes", "type": "uint256", "internalType": "uint256"}, {"name": "rarity", "type": "uint8", "internalType": "enum IHeroTypes.Rarity"}, {"name": "shiny", "type": "bool", "internalType": "bool"}, {"name": "generation", "type": "uint16", "internalType": "uint16"}, {"name": "firstName", "type": "uint32", "internalType": "uint32"}, {"name": "lastName", "type": "uint32", "internalType": "uint32"}, {"name": "shinyStyle", "type": "uint8", "internalType": "uint8"}, {"name": "class", "type": "uint8", "internalType": "uint8"}, {"name": "subClass", "type": "uint8", "internalType": "uint8"}]}, {"name": "state", "type": "tuple", "internalType": "struct IHeroTypes.HeroState", "components": [{"name": "staminaFullAt", "type": "uint256", "internalType": "uint256"}, {"name": "hpFullAt", "type": "uint256", "internalType": "uint256"}, {"name": "mpFullAt", "type": "uint256", "internalType": "uint256"}, {"name": "level", "type": "uint16", "internalType": "uint16"}, {"name": "xp", "type": "uint64", "internalType": "uint64"}, {"name": "currentQuest", "type": "address", "internalType": "address"}, {"name": "sp", "type": "uint8", "internalType": "uint8"}, {"name": "status", "type": "uint8", "internalType": "enum IHeroTypes.HeroStatus"}]}, {"name": "stats", "type": "tuple", "internalType": "struct IHeroTypes.HeroStats", "components": [{"name": "strength", "type": "uint16", "internalType": "uint16"}, {"name": "intelligence", "type": "uint16", "internalType": "uint16"}, {"name": "wisdom", "type": "uint16", "internalType": "uint16"}, {"name": "luck", "type": "uint16", "internalType": "uint16"}, {"name": "agility", "type": "uint16", "internalType": "uint16"}, {"name": "vitality", "type": "uint16", "internalType": "uint16"}, {"name": "endurance", "type": "uint16", "internalType": "uint16"}, {"name": "dexterity", "type": "uint16", "internalType": "uint16"}, {"name": "hp", "type": "uint16", "internalType": "uint16"}, {"name": "mp", "type": "uint16", "internalType": "uint16"}, {"name": "stamina", "type": "uint16", "internalType": "uint16"}]}, {"name": "primaryStatGrowth", "type": "tuple", "internalType": "struct IHeroTypes.HeroStatGrowth", "components": [{"name": "strength", "type": "uint16", "internalType": "uint16"}, {"name": "intelligence", "type": "uint16", "internalType": "uint16"}, {"name": "wisdom", "type": "uint16", "internalType": "uint16"}, {"name": "luck", "type": "uint16", "internalType": "uint16"}, {"name": "agility", "type": "uint16", "internalType": "uint16"}, {"name": "vitality", "type": "uint16", "internalType": "uint16"}, {"name": "endurance", "type": "uint16", "internalType": "uint16"}, {"name": "dexterity", "type": "uint16", "internalType": "uint16"}, {"name": "hpSm", "type": "uint16", "internalType": "uint16"}, {"name": "hpRg", "type": "uint16", "internalType": "uint16"}, {"name": "hpLg", "type": "uint16", "internalType": "uint16"}, {"name": "mpSm", "type": "uint16", "internalType": "uint16"}, {"name": "mpRg", "type": "uint16", "internalType": "uint16"}, {"name": "mpLg", "type": "uint16", "internalType": "uint16"}]}, {"name": "secondaryStatGrowth", "type": "tuple", "internalType": "struct IHeroTypes.HeroStatGrowth", "components": [{"name": "strength", "type": "uint16", "internalType": "uint16"}, {"name": "intelligence", "type": "uint16", "internalType": "uint16"}, {"name": "wisdom", "type": "uint16", "internalType": "uint16"}, {"name": "luck", "type": "uint16", "internalType": "uint16"}, {"name": "agility", "type": "uint16", "internalType": "uint16"}, {"name": "vitality", "type": "uint16", "internalType": "uint16"}, {"name": "endurance", "type": "uint16", "internalType": "uint16"}, {"name": "dexterity", "type": "uint16", "internalType": "uint16"}, {"name": "hpSm", "type": "uint16", "internalType": "uint16"}, {"name": "hpRg", "type": "uint16", "internalType": "uint16"}, {"name": "hpLg", "type": "uint16", "internalType": "uint16"}, {"name": "mpSm", "type": "uint16", "internalType": "uint16"}, {"name": "mpRg", "type": "uint16", "internalType": "uint16"}, {"name": "mpLg", "type": "uint16", "internalType": "uint16"}]}, {"name": "professions", "type": "tuple", "internalType": "struct IHeroTypes.HeroProfessions", "components": [{"name": "mining", "type": "uint16", "internalType": "uint16"}, {"name": "gardening", "type": "uint16", "internalType": "uint16"}, {"name": "foraging", "type": "uint16", "internalType": "uint16"}, {"name": "fishing", "type": "uint16", "internalType": "uint16"}]}], "indexed": false}], "anonymous": false},
-    {"name": "MeditationBegun", "type": "event", "inputs": [{"name": "player", "type": "address", "internalType": "address", "indexed": true}, {"name": "heroId", "type": "uint256", "internalType": "uint256", "indexed": true}, {"name": "meditationId", "type": "uint256", "internalType": "uint256", "indexed": false}, {"name": "primaryStat", "type": "uint8", "internalType": "uint8", "indexed": false}, {"name": "secondaryStat", "type": "uint8", "internalType": "uint8", "indexed": false}, {"name": "tertiaryStat", "type": "uint8", "internalType": "uint8", "indexed": false}, {"name": "attunementCrystal", "type": "address", "internalType": "address", "indexed": false}], "anonymous": false},
-    {"name": "MeditationCompleted", "type": "event", "inputs": [{"name": "player", "type": "address", "internalType": "address", "indexed": true}, {"name": "heroId", "type": "uint256", "internalType": "uint256", "indexed": true}, {"name": "meditationId", "type": "uint256", "internalType": "uint256", "indexed": false}], "anonymous": false},
-    {"name": "Paused", "type": "event", "inputs": [{"name": "account", "type": "address", "internalType": "address", "indexed": false}], "anonymous": false},
-    {"name": "RoleAdminChanged", "type": "event", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32", "indexed": true}, {"name": "previousAdminRole", "type": "bytes32", "internalType": "bytes32", "indexed": true}, {"name": "newAdminRole", "type": "bytes32", "internalType": "bytes32", "indexed": true}], "anonymous": false},
-    {"name": "RoleGranted", "type": "event", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32", "indexed": true}, {"name": "account", "type": "address", "internalType": "address", "indexed": true}, {"name": "sender", "type": "address", "internalType": "address", "indexed": true}], "anonymous": false},
-    {"name": "RoleRevoked", "type": "event", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32", "indexed": true}, {"name": "account", "type": "address", "internalType": "address", "indexed": true}, {"name": "sender", "type": "address", "internalType": "address", "indexed": true}], "anonymous": false},
-    {"name": "StatUp", "type": "event", "inputs": [{"name": "player", "type": "address", "internalType": "address", "indexed": true}, {"name": "heroId", "type": "uint256", "internalType": "uint256", "indexed": true}, {"name": "stat", "type": "uint256", "internalType": "uint256", "indexed": false}, {"name": "increase", "type": "uint8", "internalType": "uint8", "indexed": false}, {"name": "updateType", "type": "uint8", "internalType": "enum MeditationCircle.UpdateType", "indexed": false}], "anonymous": false},
-    {"name": "Unpaused", "type": "event", "inputs": [{"name": "account", "type": "address", "internalType": "address", "indexed": false}], "anonymous": false},
-    {"name": "DEFAULT_ADMIN_ROLE", "type": "function", "inputs": [], "outputs": [{"name": "", "type": "bytes32", "internalType": "bytes32"}], "stateMutability": "view"},
-    {"name": "MODERATOR_ROLE", "type": "function", "inputs": [], "outputs": [{"name": "", "type": "bytes32", "internalType": "bytes32"}], "stateMutability": "view"},
-    {"name": "_getRequiredRunes", "type": "function", "inputs": [{"name": "_level", "type": "uint16", "internalType": "uint16"}], "outputs": [{"name": "", "type": "uint16[10]", "internalType": "uint16[10]"}], "stateMutability": "pure"},
-    {"name": "activeAttunementCrystals", "type": "function", "inputs": [{"name": "", "type": "address", "internalType": "address"}], "outputs": [{"name": "", "type": "bool", "internalType": "bool"}], "stateMutability": "view"},
-    {"name": "addAttunementCrystal", "type": "function", "inputs": [{"name": "_address", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "adminRemove", "type": "function", "inputs": [{"name": "_heroId", "type": "uint256", "internalType": "uint256"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "completeMeditation", "type": "function", "inputs": [{"name": "_heroId", "type": "uint256", "internalType": "uint256"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "getActiveMeditations", "type": "function", "inputs": [{"name": "_address", "type": "address", "internalType": "address"}], "outputs": [{"name": "", "type": "tuple[]", "internalType": "struct MeditationCircle.Meditation[]", "components": [{"name": "id", "type": "uint256", "internalType": "uint256"}, {"name": "player", "type": "address", "internalType": "address"}, {"name": "heroId", "type": "uint256", "internalType": "uint256"}, {"name": "primaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "secondaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "tertiaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "attunementCrystal", "type": "address", "internalType": "address"}, {"name": "startBlock", "type": "uint256", "internalType": "uint256"}, {"name": "status", "type": "uint8", "internalType": "uint8"}]}], "stateMutability": "view"},
-    {"name": "getHeroMeditation", "type": "function", "inputs": [{"name": "_heroId", "type": "uint256", "internalType": "uint256"}], "outputs": [{"name": "", "type": "tuple", "internalType": "struct MeditationCircle.Meditation", "components": [{"name": "id", "type": "uint256", "internalType": "uint256"}, {"name": "player", "type": "address", "internalType": "address"}, {"name": "heroId", "type": "uint256", "internalType": "uint256"}, {"name": "primaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "secondaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "tertiaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "attunementCrystal", "type": "address", "internalType": "address"}, {"name": "startBlock", "type": "uint256", "internalType": "uint256"}, {"name": "status", "type": "uint8", "internalType": "uint8"}]}], "stateMutability": "view"},
-    {"name": "getMeditation", "type": "function", "inputs": [{"name": "_id", "type": "uint256", "internalType": "uint256"}], "outputs": [{"name": "", "type": "tuple", "internalType": "struct MeditationCircle.Meditation", "components": [{"name": "id", "type": "uint256", "internalType": "uint256"}, {"name": "player", "type": "address", "internalType": "address"}, {"name": "heroId", "type": "uint256", "internalType": "uint256"}, {"name": "primaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "secondaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "tertiaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "attunementCrystal", "type": "address", "internalType": "address"}, {"name": "startBlock", "type": "uint256", "internalType": "uint256"}, {"name": "status", "type": "uint8", "internalType": "uint8"}]}], "stateMutability": "view"},
-    {"name": "getRoleAdmin", "type": "function", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32"}], "outputs": [{"name": "", "type": "bytes32", "internalType": "bytes32"}], "stateMutability": "view"},
-    {"name": "grantRole", "type": "function", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32"}, {"name": "account", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "hasRole", "type": "function", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32"}, {"name": "account", "type": "address", "internalType": "address"}], "outputs": [{"name": "", "type": "bool", "internalType": "bool"}], "stateMutability": "view"},
-    {"name": "heroToMeditation", "type": "function", "inputs": [{"name": "", "type": "uint256", "internalType": "uint256"}], "outputs": [{"name": "", "type": "uint256", "internalType": "uint256"}], "stateMutability": "view"},
-    {"name": "initialize", "type": "function", "inputs": [{"name": "_heroCoreAddress", "type": "address", "internalType": "address"}, {"name": "_statScienceAddress", "type": "address", "internalType": "address"}, {"name": "_jewelTokenAddress", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "jewelToken", "type": "function", "inputs": [], "outputs": [{"name": "", "type": "address", "internalType": "contract IJewelToken"}], "stateMutability": "view"},
-    {"name": "pause", "type": "function", "inputs": [], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "paused", "type": "function", "inputs": [], "outputs": [{"name": "", "type": "bool", "internalType": "bool"}], "stateMutability": "view"},
-    {"name": "profileActiveMeditations", "type": "function", "inputs": [{"name": "", "type": "address", "internalType": "address"}, {"name": "", "type": "uint256", "internalType": "uint256"}], "outputs": [{"name": "id", "type": "uint256", "internalType": "uint256"}, {"name": "player", "type": "address", "internalType": "address"}, {"name": "heroId", "type": "uint256", "internalType": "uint256"}, {"name": "primaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "secondaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "tertiaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "attunementCrystal", "type": "address", "internalType": "address"}, {"name": "startBlock", "type": "uint256", "internalType": "uint256"}, {"name": "status", "type": "uint8", "internalType": "uint8"}], "stateMutability": "view"},
-    {"name": "removeAttunementCrystal", "type": "function", "inputs": [{"name": "_address", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "renounceRole", "type": "function", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32"}, {"name": "account", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "revokeRole", "type": "function", "inputs": [{"name": "role", "type": "bytes32", "internalType": "bytes32"}, {"name": "account", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "runes", "type": "function", "inputs": [{"name": "", "type": "uint256", "internalType": "uint256"}], "outputs": [{"name": "", "type": "address", "internalType": "contract IInventoryItem"}], "stateMutability": "view"},
-    {"name": "setFees", "type": "function", "inputs": [{"name": "_feeAddresses", "type": "address[]", "internalType": "address[]"}, {"name": "_feePercents", "type": "uint256[]", "internalType": "uint256[]"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "setRune", "type": "function", "inputs": [{"name": "_index", "type": "uint8", "internalType": "uint8"}, {"name": "_address", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "setStatScienceAddress", "type": "function", "inputs": [{"name": "_statScienceAddress", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "startMeditation", "type": "function", "inputs": [{"name": "_heroId", "type": "uint256", "internalType": "uint256"}, {"name": "_primaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "_secondaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "_tertiaryStat", "type": "uint8", "internalType": "uint8"}, {"name": "_attunementCrystal", "type": "address", "internalType": "address"}], "outputs": [], "stateMutability": "nonpayable"},
-    {"name": "supportsInterface", "type": "function", "inputs": [{"name": "interfaceId", "type": "bytes4", "internalType": "bytes4"}], "outputs": [{"name": "", "type": "bool", "internalType": "bool"}], "stateMutability": "view"},
-    {"name": "unpause", "type": "function", "inputs": [], "outputs": [], "stateMutability": "nonpayable"}
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "_diamondCut",
+        "type": "tuple[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_init",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "_calldata",
+        "type": "bytes"
+      }
+    ],
+    "name": "DiamondCut",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "_diamondCut",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "address",
+        "name": "_init",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_calldata",
+        "type": "bytes"
+      }
+    ],
+    "name": "diamondCut",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "_functionSelector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "facetAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "facetAddress_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "facetAddresses",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "facetAddresses_",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_facet",
+        "type": "address"
+      }
+    ],
+    "name": "facetFunctionSelectors",
+    "outputs": [
+      {
+        "internalType": "bytes4[]",
+        "name": "facetFunctionSelectors_",
+        "type": "bytes4[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "facets",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondLoupe.Facet[]",
+        "name": "facets_",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "_interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "supportsInterface",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attunementCrystal",
+        "type": "address"
+      }
+    ],
+    "name": "AttunementCrystalAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "feeAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "feePercent",
+        "type": "uint256"
+      }
+    ],
+    "name": "FeeAddressAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "source",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "timestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "FeeDeferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "source",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "timestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "FeeDisbursed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "source",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "timestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "FeeLockedBurned",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "summonedTime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "nextSummonTime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "summonerId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "assistantId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32",
+                "name": "summons",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maxSummons",
+                "type": "uint32"
+              }
+            ],
+            "internalType": "struct SummoningInfo",
+            "name": "summoningInfo",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "statGenes",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "visualGenes",
+                "type": "uint256"
+              },
+              {
+                "internalType": "enum Rarity",
+                "name": "rarity",
+                "type": "uint8"
+              },
+              {
+                "internalType": "bool",
+                "name": "shiny",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint16",
+                "name": "generation",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "firstName",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "lastName",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint8",
+                "name": "shinyStyle",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint8",
+                "name": "class",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint8",
+                "name": "subClass",
+                "type": "uint8"
+              }
+            ],
+            "internalType": "struct HeroInfo",
+            "name": "info",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "staminaFullAt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "hpFullAt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "mpFullAt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "level",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint64",
+                "name": "xp",
+                "type": "uint64"
+              },
+              {
+                "internalType": "address",
+                "name": "currentQuest",
+                "type": "address"
+              },
+              {
+                "internalType": "uint8",
+                "name": "sp",
+                "type": "uint8"
+              },
+              {
+                "internalType": "enum HeroStatus",
+                "name": "status",
+                "type": "uint8"
+              }
+            ],
+            "internalType": "struct HeroState",
+            "name": "state",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "strength",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "intelligence",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "wisdom",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "luck",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "agility",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "vitality",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "endurance",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "dexterity",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hp",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mp",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "stamina",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroStats",
+            "name": "stats",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "strength",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "intelligence",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "wisdom",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "luck",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "agility",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "vitality",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "endurance",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "dexterity",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpLg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpLg",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroStatGrowth",
+            "name": "primaryStatGrowth",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "strength",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "intelligence",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "wisdom",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "luck",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "agility",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "vitality",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "endurance",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "dexterity",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpLg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpLg",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroStatGrowth",
+            "name": "secondaryStatGrowth",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "mining",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "gardening",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "foraging",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "fishing",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroProfessions",
+            "name": "professions",
+            "type": "tuple"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct Hero",
+        "name": "hero",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "summonedTime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "nextSummonTime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "summonerId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "assistantId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32",
+                "name": "summons",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maxSummons",
+                "type": "uint32"
+              }
+            ],
+            "internalType": "struct SummoningInfo",
+            "name": "summoningInfo",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "statGenes",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "visualGenes",
+                "type": "uint256"
+              },
+              {
+                "internalType": "enum Rarity",
+                "name": "rarity",
+                "type": "uint8"
+              },
+              {
+                "internalType": "bool",
+                "name": "shiny",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint16",
+                "name": "generation",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "firstName",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "lastName",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint8",
+                "name": "shinyStyle",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint8",
+                "name": "class",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint8",
+                "name": "subClass",
+                "type": "uint8"
+              }
+            ],
+            "internalType": "struct HeroInfo",
+            "name": "info",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "staminaFullAt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "hpFullAt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "mpFullAt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint16",
+                "name": "level",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint64",
+                "name": "xp",
+                "type": "uint64"
+              },
+              {
+                "internalType": "address",
+                "name": "currentQuest",
+                "type": "address"
+              },
+              {
+                "internalType": "uint8",
+                "name": "sp",
+                "type": "uint8"
+              },
+              {
+                "internalType": "enum HeroStatus",
+                "name": "status",
+                "type": "uint8"
+              }
+            ],
+            "internalType": "struct HeroState",
+            "name": "state",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "strength",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "intelligence",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "wisdom",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "luck",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "agility",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "vitality",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "endurance",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "dexterity",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hp",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mp",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "stamina",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroStats",
+            "name": "stats",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "strength",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "intelligence",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "wisdom",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "luck",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "agility",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "vitality",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "endurance",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "dexterity",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpLg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpLg",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroStatGrowth",
+            "name": "primaryStatGrowth",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "strength",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "intelligence",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "wisdom",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "luck",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "agility",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "vitality",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "endurance",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "dexterity",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "hpLg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpSm",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpRg",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "mpLg",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroStatGrowth",
+            "name": "secondaryStatGrowth",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "mining",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "gardening",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "foraging",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "fishing",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct HeroProfessions",
+            "name": "professions",
+            "type": "tuple"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct Hero",
+        "name": "oldHero",
+        "type": "tuple"
+      }
+    ],
+    "name": "LevelUp",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "meditationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "primaryStat",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "secondaryStat",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "tertiaryStat",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attunementCrystal",
+        "type": "address"
+      }
+    ],
+    "name": "MeditationBegun",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "meditationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "primaryStat",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "secondaryStat",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "tertiaryStat",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attunementCrystal",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "toLevel",
+        "type": "uint16"
+      }
+    ],
+    "name": "MeditationBegunWithLevel",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "meditationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "MeditationCompleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "meditationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "attunementCrystal",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "toLevel",
+        "type": "uint16"
+      }
+    ],
+    "name": "MeditationCompletedV2",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Paused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "previousAdminRole",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "newAdminRole",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RoleAdminChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleGranted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "stat",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "increase",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum UpdateType",
+        "name": "updateType",
+        "type": "uint8"
+      }
+    ],
+    "name": "StatUp",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "stat",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "increase",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum UpdateType",
+        "name": "updateType",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "toLevel",
+        "type": "uint16"
+      }
+    ],
+    "name": "StatUpV2",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Unpaused",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "DEFAULT_ADMIN_ROLE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MODERATOR_ROLE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "activeAttunementCrystals",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "addAttunementCrystal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_heroId",
+        "type": "uint256"
+      }
+    ],
+    "name": "adminRemove",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "feeAddresses",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "feePercents",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getRoleAdmin",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "grantRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "hasRole",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "heroToMeditation",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "powerToken",
+    "outputs": [
+      {
+        "internalType": "contract IPowerToken",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "profileActiveMeditations",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "heroId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "primaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "secondaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "tertiaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "attunementCrystal",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "status",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "removeAttunementCrystal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "renounceRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "revokeRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "runes",
+    "outputs": [
+      {
+        "internalType": "contract IInventoryItem",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_feeAddresses",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "_feePercents",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "setFees",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_flagStorageAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setFlagStorage",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_powerTokenAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setPowerToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_randomGeneratorAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setRandomGenerator",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "_index",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "setRune",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_statScienceAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setStatScienceAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenUnlockerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setTokenUnlocker",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "tokenUnlockerAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_heroId",
+        "type": "uint256"
+      }
+    ],
+    "name": "completeMeditation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "_heroIds",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "completeMeditations",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "getActiveMeditations",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "heroId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "primaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "secondaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "tertiaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "attunementCrystal",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Meditation[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_heroId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getHeroMeditation",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "heroId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "primaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "secondaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "tertiaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "attunementCrystal",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Meditation",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMeditation",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "heroId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "primaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "secondaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "tertiaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "attunementCrystal",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Meditation",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "_level",
+        "type": "uint16"
+      }
+    ],
+    "name": "_getRequiredRunes",
+    "outputs": [
+      {
+        "internalType": "uint16[10]",
+        "name": "",
+        "type": "uint16[10]"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_heroId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_primaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_secondaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_tertiaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "_attunementCrystal",
+        "type": "address"
+      }
+    ],
+    "name": "startMeditation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_heroId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_primaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_secondaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_tertiaryStat",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "_attunementCrystal",
+        "type": "address"
+      }
+    ],
+    "name": "startMeditationWithLocked",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "heroId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "primaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "secondaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "tertiaryStat",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "attunementCrystal",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "useLockedTokens",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct MeditationInput[]",
+        "name": "_meditations",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "startMeditations",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
 ]
     """
 
@@ -173,7 +2518,7 @@ def parse_meditation_results(contract_address, tx_receipt, rpc_address):
     level_up = contract.events.LevelUp().process_receipt(tx_receipt, errors=DISCARD)
     new_level = level_up[0]['args']["hero"][3][3]
     
-    stat_up = contract.events.StatUp().process_receipt(tx_receipt, errors=DISCARD)
+    stat_up = contract.events.StatUpV2().process_receipt(tx_receipt, errors=DISCARD)
 
     hero_id = None
     for stat in stat_up:
